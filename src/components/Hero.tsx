@@ -90,37 +90,56 @@ export default function Hero() {
       </motion.div>
       
       <div className="container mx-auto px-4 md:px-6 z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="overflow-hidden mb-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 opacity-0 translate-y-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              Crafting <span className="text-brand-blue">High-Performance</span> Software Solutions
-            </h1>
+        <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12">
+          <div className="md:w-3/5 text-center md:text-left">
+            <div className="overflow-hidden mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 opacity-0 translate-y-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                Crafting <span className="text-brand-blue">High-Performance</span> Software Solutions
+              </h1>
+            </div>
+            
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 opacity-0 translate-y-8 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <AnimatedText 
+                text="I build blazing-fast applications, from web3 platforms to automation systems, focusing on performance and user experience."
+                staggerDelay={0.01}
+                delay={0.6}
+                className="leading-relaxed"
+              />
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 opacity-0 translate-y-8 animate-slide-up" style={{ animationDelay: '0.6s' }}>
+              <Link
+                to="/portfolio"
+                className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-all hover:bg-primary/90 hover:shadow-md hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary/20 w-full sm:w-auto"
+              >
+                View My Work
+                <ArrowRight size={16} className="ml-2" />
+              </Link>
+              
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3 text-sm font-medium shadow transition-all hover:bg-secondary/80 hover:shadow-md hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary/20 w-full sm:w-auto"
+              >
+                Get in Touch
+              </Link>
+            </div>
           </div>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 opacity-0 translate-y-8 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-            <AnimatedText 
-              text="I build blazing-fast applications, from web3 platforms to automation systems, focusing on performance and user experience."
-              staggerDelay={0.01}
-              delay={0.6}
-              className="leading-relaxed"
-            />
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 translate-y-8 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-            <Link
-              to="/portfolio"
-              className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-all hover:bg-primary/90 hover:shadow-md hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary/20 w-full sm:w-auto"
+          <div className="md:w-2/5 mb-8 md:mb-0 opacity-0 translate-y-8 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            <motion.div 
+              className="relative"
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              View My Work
-              <ArrowRight size={16} className="ml-2" />
-            </Link>
-            
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3 text-sm font-medium shadow transition-all hover:bg-secondary/80 hover:shadow-md hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary/20 w-full sm:w-auto"
-            >
-              Get in Touch
-            </Link>
+              <div className="rounded-2xl overflow-hidden border-4 border-white/10 shadow-xl bg-gradient-to-b from-brand-blue/10 to-brand-purple/10 p-1">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Alex - Software Developer" 
+                  className="rounded-xl w-full aspect-square object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-brand-blue/10 w-full h-full rounded-2xl -z-10"></div>
+            </motion.div>
           </div>
         </div>
         
