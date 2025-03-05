@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, GitHub, Linkedin, Twitter } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export default function Navbar() {
@@ -106,7 +106,7 @@ function NavLinks({ vertical = false }: { vertical?: boolean }) {
 
 function SocialLinks() {
   const links = [
-    { href: 'https://github.com', Icon: GitHub, label: 'GitHub' },
+    { href: 'https://github.com', Icon: Github, label: 'GitHub' },
     { href: 'https://linkedin.com', Icon: Linkedin, label: 'LinkedIn' },
     { href: 'https://twitter.com', Icon: Twitter, label: 'Twitter' }
   ];

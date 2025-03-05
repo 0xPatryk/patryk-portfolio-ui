@@ -1,5 +1,5 @@
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, CSSProperties } from 'react';
 import { cn } from '@/lib/utils';
 
 interface InteractiveElementProps {
@@ -7,13 +7,15 @@ interface InteractiveElementProps {
   intensity?: number;
   perspective?: number;
   children: React.ReactNode;
+  style?: CSSProperties;
 }
 
 export default function InteractiveElement({
   children,
   className,
   intensity = 10,
-  perspective = 1000
+  perspective = 1000,
+  style = {}
 }: InteractiveElementProps) {
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
@@ -66,7 +68,7 @@ export default function InteractiveElement({
     <div
       ref={elementRef}
       className={cn("relative overflow-hidden", className)}
-      style={rotateStyle}
+      style={{...rotateStyle, ...style}}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

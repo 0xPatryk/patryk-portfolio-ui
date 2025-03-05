@@ -9,7 +9,7 @@ interface AnimatedTextProps {
   splitBy?: 'word' | 'letter';
   delay?: number;
   staggerDelay?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
 }
 
 export default function AnimatedText({
@@ -22,7 +22,7 @@ export default function AnimatedText({
   as: Component = 'span'
 }: AnimatedTextProps) {
   const [inView, setInView] = useState(false);
-  const containerRef = useRef<HTMLSpanElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -48,7 +48,7 @@ export default function AnimatedText({
   const separator = splitBy === 'word' ? ' ' : '';
 
   return (
-    <Component 
+    <div 
       ref={containerRef} 
       className={cn("inline-block overflow-hidden", className)}
       aria-label={text}
@@ -71,6 +71,6 @@ export default function AnimatedText({
           </span>
         </span>
       ))}
-    </Component>
+    </div>
   );
 }
