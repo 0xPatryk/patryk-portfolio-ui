@@ -1,69 +1,74 @@
-# Welcome to your Lovable project
+# 👋 Hi, I'm Patryk
 
-## Project info
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/0xpatryk)
+[![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=flat&logo=firefox&logoColor=#FF7139)](https://patryk.dev)
+[![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/0xPatryk)
 
-**URL**: https://lovable.dev/projects/97ff6c42-3f87-4e9b-b731-f9a0b08a1850
+## 💼 Senior Software Engineer | Web3 Developer | Automation Expert
 
-## How can I edit this code?
+I build high-performance applications, Web3 solutions, and automation systems that solve real-world problems.
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/97ff6c42-3f87-4e9b-b731-f9a0b08a1850) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```typescript
+const patryk = {
+  skills: {
+    languages: ["Rust", "TypeScript", "Python", "Solidity", "SQL"],
+    frontend: ["React", "TailwindCSS", "Flutter"],
+    backend: ["Node.js", "FastAPI", "PostgreSQL", "Actix-Web", "Redis", "Docker"],
+    web3: ["Ethereum", "Smart Contracts", "MEV", "DeFi", "Flashloans"],
+    automation: ["Web Scraping", "Content Generation", "Social Media APIs"]
+  },
+  currentFocus: "Building high-performance trading systems and automation tools"
+};
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Featured Projects
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### [RustBitrage Bot](https://github.com/0xPatryk/rustbitrage-bot)
+Crypto arbitrage bot built in Rust that detects and executes profitable trading opportunities across decentralized exchanges.
 
-**Use GitHub Codespaces**
+### [Maskify](https://patryk.dev/project/maskify)
+Content transformation platform that helps social media agencies reuse viral videos across multiple accounts by altering audio and metadata to bypass algorithm detection.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### [Hyperspartan](https://hyperspartan.xyz)
+AI-powered Telegram bot for Hyperliquid traders providing natural language trading commands, automated strategies, and real-time position management.
 
-## What technologies are used for this project?
+### [Airtable Social Media Analyzer](https://patryk.dev/project/airtable-analyzer)
+Analytics dashboard that tracks engagement metrics from Instagram and TikTok to identify viral content trends and successful social media strategies.
 
-This project is built with .
+### [Insider Wallet Scraper](https://github.com/0xPatryk/insider-wallets-scraper)
+Advanced crypto wallet tracking tool that identifies successful traders through multi-platform analysis of their trading activities and performance.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 💻 Tech Stack
 
-## How can I deploy this project?
+![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Solidity](https://img.shields.io/badge/Solidity-%23363636.svg?style=for-the-badge&logo=solidity&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
-Simply open [Lovable](https://lovable.dev/projects/97ff6c42-3f87-4e9b-b731-f9a0b08a1850) and click on Share -> Publish.
+## 🎯 Specialties
 
-## I want to use a custom domain - is that possible?
+- 🚀 High-performance system architecture
+- 💰 DeFi & MEV development
+- 🤖 Automation & web scraping
+- 📊 Data analysis & visualization
+- 📱 Social media API integration
+- 🧠 AI/ML solution implementation
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## 📈 GitHub Stats
+
+[![GitHub stats](https://github-readme-stats.vercel.app/api?username=0xPatryk&show_icons=true&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=0xPatryk&layout=compact&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+
+## 📫 Let's Connect
+
+- [Portfolio Website](https://patryk.dev)
+- [LinkedIn](https://linkedin.com/in/0xpatryk)
+- [GitHub](https://github.com/0xPatryk)
+
+> "The only way to do great work is to love what you do." — Steve Jobs
