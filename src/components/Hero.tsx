@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Code, Database, Cpu } from 'lucide-react';
@@ -94,13 +93,13 @@ export default function Hero() {
           <div className="md:w-3/5 text-center md:text-left">
             <div className="overflow-hidden mb-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 opacity-0 translate-y-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                Crafting <span className="text-brand-blue">High-Performance</span> Software Solutions
+                There's <span className="text-brand-blue">Nothing</span> I Can't Build for Your Business
               </h1>
             </div>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-8 opacity-0 translate-y-8 animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <AnimatedText 
-                text="I build blazing-fast applications, from web3 platforms to automation systems, focusing on performance and user experience."
+                text="Hi, I'm Patryk. I transform business challenges into elegant software solutions that deliver real value. If it makes business sense, I can build it for you."
                 staggerDelay={0.01}
                 delay={0.6}
                 className="leading-relaxed"
@@ -133,9 +132,9 @@ export default function Hero() {
             >
               <div className="rounded-2xl overflow-hidden border-4 border-white/10 shadow-xl bg-gradient-to-b from-brand-blue/10 to-brand-purple/10 p-1">
                 <img 
-                  src="/placeholder.svg" 
-                  alt="Alex - Software Developer" 
-                  className="rounded-xl w-full aspect-square object-cover"
+                  src="/images/patyk.jpeg" 
+                  alt="Patryk - Software Developer & Problem Solver" 
+                  className="rounded-xl w-full aspect-square object-cover object-bottom"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-brand-blue/10 w-full h-full rounded-2xl -z-10"></div>
@@ -143,7 +142,7 @@ export default function Hero() {
           </div>
         </div>
         
-        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="mt-20 mb-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {[
             {
               icon: <Code className="text-brand-blue" />,
@@ -157,26 +156,26 @@ export default function Hero() {
             },
             {
               icon: <Cpu className="text-brand-blue" />,
-              title: "Performance Engineering",
-              description: "Optimized systems written in Rust and Python for maximum speed and efficiency."
+              title: "Machine Learning",
+              description: "Intelligent systems and predictive models using advanced algorithms and data science techniques."
             }
           ].map((service, i) => (
             <InteractiveElement 
               key={i}
-              className="bg-card shadow-sm rounded-xl p-6 border border-border/40 flex flex-col items-center text-center opacity-0 translate-y-8 animate-slide-up"
+              className="bg-card shadow-sm hover:shadow-md rounded-xl p-8 border border-border/40 flex flex-col items-center text-center opacity-0 translate-y-8 animate-slide-up transition-all duration-300"
               style={{ animationDelay: `${0.7 + i * 0.1}s` }}
             >
-              <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-4">
+              <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center mb-5">
                 {service.icon}
               </div>
-              <h3 className="text-lg font-medium mb-2">{service.title}</h3>
-              <p className="text-sm text-muted-foreground">{service.description}</p>
+              <h3 className="text-lg font-semibold mb-3">{service.title}</h3>
+              <p className="text-muted-foreground">{service.description}</p>
             </InteractiveElement>
           ))}
         </div>
       </div>
       
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
           <div className="w-1 h-2 rounded-full bg-muted-foreground/60" />
         </div>

@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Mail, ArrowUp } from 'lucide-react';
 
@@ -12,17 +11,17 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-display text-lg font-medium mb-4">Alex.dev</h3>
+            <h3 className="font-display text-lg font-medium mb-4">0xPatryk.dev</h3>
             <p className="text-sm text-muted-foreground mb-4 max-w-xs">
               Crafting performant software solutions from web3 applications to high-speed automation systems.
             </p>
             <div className="flex items-center space-x-1 text-sm text-muted-foreground">
               <Mail size={14} className="mr-1" />
               <a 
-                href="mailto:hello@example.com" 
+                href="mailto:patryk.stemporowski@gmail.com" 
                 className="hover:text-foreground transition-colors"
               >
-                hello@example.com
+                patryk.stemporowski@gmail.com
               </a>
             </div>
           </div>
@@ -62,10 +61,8 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Alex.dev. All rights reserved.
-          </p>
+        <div className="mt-12 pt-6 border-t border-border/20 text-sm text-muted-foreground flex flex-wrap justify-between items-center gap-4">
+          <p>© {new Date().getFullYear()} 0xPatryk.dev. All rights reserved.</p>
           
           <button
             onClick={scrollToTop}

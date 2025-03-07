@@ -32,7 +32,7 @@ export default function About() {
                 I'm a software developer specializing in high-performance applications, web3 technologies, and automation systems. With expertise in Rust, Python, and TypeScript, I build solutions that prioritize speed, reliability, and user experience.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                My background spans from developing blockchain applications to creating sophisticated scraping tools and optimizing system performance for enterprise clients. I'm passionate about clean code, performance engineering, and creating solutions that solve real business challenges.
+                My background spans from developing blockchain applications to creating scraping tools and optimizing system performance for enterprise clients. I'm passionate about clean code, performance engineering, and creating solutions that solve real business challenges.
               </p>
             </motion.div>
             
@@ -44,8 +44,6 @@ export default function About() {
             >
               {[
                 { value: '5+', label: 'Years Experience' },
-                { value: '30+', label: 'Projects Completed' },
-                { value: '15+', label: 'Happy Clients' },
                 { value: '3', label: 'Programming Languages' }
               ].map((stat, i) => (
                 <div key={i} className="bg-background rounded-lg p-4 text-center shadow-sm border border-border/50">

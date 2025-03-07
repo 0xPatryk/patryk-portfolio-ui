@@ -1,4 +1,3 @@
-
 import { Helmet } from 'react-helmet';
 import PageTransition from '@/components/PageTransition';
 import Navbar from '@/components/Navbar';
@@ -10,7 +9,7 @@ export default function Portfolio() {
   return (
     <PageTransition>
       <Helmet>
-        <title>Portfolio | Alex.dev</title>
+        <title>Portfolio | 0xPatryk.dev</title>
         <meta name="description" content="Explore my projects spanning web3, automation, and performance engineering." />
       </Helmet>
       

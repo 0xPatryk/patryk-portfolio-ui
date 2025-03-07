@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Github, Linkedin, Twitter } from 'lucide-react';
@@ -37,7 +36,7 @@ export default function Navbar() {
           to="/" 
           className="font-display text-xl font-semibold relative z-10 group"
         >
-          <span className="inline-block transition-transform duration-300 group-hover:-translate-y-1">Alex</span>
+          <span className="inline-block transition-transform duration-300 group-hover:-translate-y-1">0xPatryk</span>
           <span className="text-brand-blue inline-block transition-transform duration-300 group-hover:-translate-y-1 group-hover:text-opacity-80">.dev</span>
         </Link>
         
@@ -78,6 +77,7 @@ function NavLinks({ vertical = false }: { vertical?: boolean }) {
   
   const links = [
     { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/contact', label: 'Contact' }
   ];
@@ -106,9 +106,10 @@ function NavLinks({ vertical = false }: { vertical?: boolean }) {
 
 function SocialLinks() {
   const links = [
-    { href: 'https://github.com', Icon: Github, label: 'GitHub' },
-    { href: 'https://linkedin.com', Icon: Linkedin, label: 'LinkedIn' },
-    { href: 'https://twitter.com', Icon: Twitter, label: 'Twitter' }
+    { href: 'https://github.com/0xPatryk', Icon: Github, label: 'GitHub' },
+    
+    { href: 'https://www.linkedin.com/in/patryk-stemporowski-05150722a/', Icon: Linkedin, label: 'LinkedIn' },
+    { href: 'https://x.com/stemper_dev', Icon: Twitter, label: 'X' }
   ];
   
   return (

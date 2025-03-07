@@ -1,4 +1,3 @@
-
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Code, Database, Cpu, Sparkles } from 'lucide-react';
@@ -23,9 +22,9 @@ export default function Skills() {
     },
     {
       icon: <Cpu size={24} className="text-green-500" />,
-      title: "Performance Engineering",
-      description: "Optimizing applications for speed and efficiency with low-level programming and system architecture.",
-      technologies: ["Rust", "WebAssembly", "C++", "Performance Profiling"]
+      title: "Machine Learning",
+      description: "Developing intelligent systems and predictive models using advanced algorithms and data analysis techniques.",
+      technologies: ["Python", "TensorFlow", "PyTorch", "Scikit-learn"]
     },
     {
       icon: <Sparkles size={24} className="text-amber-500" />,

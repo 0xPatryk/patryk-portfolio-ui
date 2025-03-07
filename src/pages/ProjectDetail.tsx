@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -8,6 +7,24 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { projects, type Project } from '@/data/projects';
 import { motion } from 'framer-motion';
+
+// Helper function to format text with markdown-like syntax
+const formatDescription = (text: string) => {
+  if (!text) return [];
+  
+  // Split into paragraphs (double newlines)
+  return text.split('\n\n').map(paragraph => {
+    // Check if paragraph is a list
+    if (paragraph.trim().split('\n').every(line => line.trim().startsWith('- '))) {
+      // It's a list, render as a list
+      const listItems = paragraph.trim().split('\n').map(item => item.trim().substring(2));
+      return { type: 'list', content: listItems };
+    }
+    
+    // Regular paragraph
+    return { type: 'paragraph', content: paragraph.trim() };
+  });
+};
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -36,6 +53,9 @@ export default function ProjectDetail() {
   if (!project) {
     return null; // Will redirect via useEffect
   }
+  
+  // Format the description
+  const formattedDescription = formatDescription(project.description);
   
   return (
     <PageTransition>
@@ -106,7 +126,7 @@ export default function ProjectDetail() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex gap-4 mb-8"
+              className="flex flex-wrap gap-4 mb-8"
             >
               {project.githubUrl && (
                 <a 
@@ -131,6 +151,45 @@ export default function ProjectDetail() {
                   View Live
                 </a>
               )}
+
+              {project.telegramUrl && (
+                <a 
+                  href={project.telegramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 text-sm font-medium transition-all"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                    <path d="M21.5 4.5L2.5 12.5L11.5 14.5L14.5 21.5L21.5 4.5Z"></path>
+                  </svg>
+                  Telegram Bot
+                </a>
+              )}
+
+              {project.demoUrl && (
+                <a 
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 text-sm font-medium transition-all"
+                >
+                  <ExternalLink size={16} className="mr-2" />
+                  View Demo
+                </a>
+              )}
+
+              {project.additionalLinks && project.additionalLinks.map((link, index) => (
+                <a 
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 text-sm font-medium transition-all"
+                >
+                  <ExternalLink size={16} className="mr-2" />
+                  {link.label}
+                </a>
+              ))}
             </motion.div>
             
             <motion.div
@@ -139,12 +198,61 @@ export default function ProjectDetail() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="prose prose-lg max-w-none"
             >
-              <div className="space-y-4 text-muted-foreground">
-                {project.description.split('\n\n').map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
-                ))}
+              <div className="space-y-6 text-muted-foreground">
+                {formattedDescription.map((block, index) => {
+                  if (block.type === 'list') {
+                    return (
+                      <ul key={index} className="list-disc pl-6 space-y-2">
+                        {(block.content as string[]).map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    );
+                  } else {
+                    return (
+                      <p key={index} className="whitespace-pre-line">
+                        {block.content}
+                      </p>
+                    );
+                  }
+                })}
               </div>
             </motion.div>
+            
+            {project.screenshots && project.screenshots.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.35 }}
+                className="mt-16 mb-16"
+              >
+                <h2 className="text-2xl font-bold mb-8">Project Screenshots</h2>
+                <div className="space-y-12">
+                  {project.screenshots.map((screenshot, index) => (
+                    <motion.div 
+                      key={index} 
+                      className="rounded-xl overflow-hidden border border-border/40 shadow-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.1 * index }}
+                    >
+                      <div className="aspect-[16/9] overflow-hidden">
+                        <img 
+                          src={screenshot.url} 
+                          alt={screenshot.caption}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      {screenshot.caption && (
+                        <div className="p-5 bg-card">
+                          <p className="text-base">{screenshot.caption}</p>
+                        </div>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
             
             {relatedProjects.length > 0 && (
               <motion.div
