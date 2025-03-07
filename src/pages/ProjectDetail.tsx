@@ -60,7 +60,7 @@ export default function ProjectDetail() {
   return (
     <PageTransition>
       <Helmet>
-        <title>{project.title} | Alex.dev</title>
+        <title>{project.title} | 0xPatryk.dev</title>
         <meta name="description" content={project.shortDescription} />
       </Helmet>
       
@@ -218,6 +218,43 @@ export default function ProjectDetail() {
                 })}
               </div>
             </motion.div>
+            
+            {project.videos && project.videos.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.35 }}
+                className="mt-16 mb-16"
+              >
+                <h2 className="text-2xl font-bold mb-8">Project Demos</h2>
+                <div className="space-y-12">
+                  {project.videos.map((video, index) => (
+                    <motion.div 
+                      key={index} 
+                      className="rounded-xl overflow-hidden border border-border/40 shadow-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.1 * index }}
+                    >
+                      <div className="aspect-[16/9] overflow-hidden">
+                        <video 
+                          src={video.url} 
+                          controls
+                          className="w-full h-full object-cover"
+                        >
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                      {video.caption && (
+                        <div className="p-5 bg-card">
+                          <p className="text-base">{video.caption}</p>
+                        </div>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
             
             {project.screenshots && project.screenshots.length > 0 && (
               <motion.div

@@ -15,6 +15,7 @@ export interface Project {
   demoUrl?: string;
   additionalLinks?: { label: string; url: string }[];
   screenshots?: { url: string; caption: string }[];
+  videos?: { url: string; caption: string }[];
 }
 
 export const projects: Project[] = [
@@ -43,12 +44,12 @@ export const projects: Project[] = [
       The system has been a game-changer for the agency, allowing them to maintain engagement across multiple accounts without triggering algorithm penalties. It's particularly effective for agencies managing multiple client accounts in the same niche where content themes often overlap.
     `,
     shortDescription: 'Content transformation platform that helps social media agencies reuse viral videos across multiple accounts by altering audio and metadata to bypass algorithm detection.',
-    imageUrl: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=2674&auto=format&fit=crop',
+    imageUrl: '/images/projects/maskify/ui.png',
     featured: true,
     date: '2024-01-20',
     screenshots: [
       { 
-        url: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=2674&auto=format&fit=crop', 
+        url: '/images/projects/maskify/ui.png', 
         caption: 'Maskify web interface for video processing and transformation' 
       }
     ]
@@ -83,8 +84,7 @@ export const projects: Project[] = [
     shortDescription: 'End-to-end automation system that scrapes, transforms, and schedules content from multiple platforms to Instagram with AI-enhanced captions and branding.',
     imageUrl: 'https://images.unsplash.com/photo-1611262588024-d12430b98920',
     additionalLinks: [
-      { label: 'Demo Video', url: 'https://example.com/instagram-automation-demo' },
-      { label: 'Case Study', url: 'https://example.com/instagram-automation-case-study' }
+      { label: 'Instagram Automation Demo', url: 'https://www.instagram.com/meme.chronicles_/' },
     ],
     screenshots: [
       { 
@@ -119,27 +119,40 @@ export const projects: Project[] = [
       - API endpoints for updating posts and adding new accounts to track
       - Calculation of engagement scores to identify high-performing content
 
-      The system helps content creators and marketers identify what types of content are trending in their niche, allowing them to make data-driven decisions for their content strategy.
-
-      Technical implementation uses Node.js with TypeScript and the Fastify framework, with Docker for easy deployment.
+      Technical Implementation:
+      - Built with Node.js and TypeScript for type safety and maintainability
+      - Airtable integration to fetch and store account configurations:
+        - Stores analyzed metrics and engagement data
+      - Proxy server to bypass rate limits and access private content
+      - Instagram Private API integration:
+        - Authenticates with stored account credentials
+        - Private API to fetch reels
+        - Extracts engagement metrics and reach data
+      - TikTok API integration:
+        - Uses unofficial API to fetch video analytics
+        - Tracks view counts, shares, and engagement rates
+      - Automated data collection pipeline runs every 24 hours:
+        - Fetches new content from both platforms
+        - Updates metrics for existing content
+        - Stores results in Airtable
     `,
     shortDescription: 'Social media analytics dashboard that tracks engagement metrics from Instagram and TikTok to identify viral content trends.',
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2660&auto=format&fit=crop',
+    imageUrl: '/images/projects/airtable-analyzer/dashboard.png',
     featured: true,
     date: '2024-06-01',
     screenshots: [
       { 
-        url: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113', 
+        url: '/images/projects/airtable-analyzer/analytics.png', 
         caption: 'Analytics dashboard showing engagement metrics' 
       },
       { 
-        url: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb', 
-        caption: 'Account tracking interface with growth trends' 
+        url: '/images/projects/airtable-analyzer/dashboard.png', 
+        caption: 'Account tracking interface' 
       },
       { 
-        url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f', 
-        caption: 'Content performance comparison across platforms' 
-      }
+        url: '/images/projects/airtable-analyzer/comparison.png', 
+        caption: 'Content performance comparison' 
+      },
     ]
   },
   {
@@ -149,18 +162,23 @@ export const projects: Project[] = [
     category: 'web3',
     technologies: ['Rust', 'Solidity', 'Ethereum', 'DeFi', 'Smart Contracts', 'Flashloans'],
     description: `
-      I built this crypto arbitrage bot in Rust to spot and capitalize on price differences between decentralized exchanges in real-time. The main challenge was creating something fast enough to compete in the MEV space, where milliseconds matter.
+      I built this high-performance crypto arbitrage bot in Rust to detect and execute profitable trading opportunities across decentralized exchanges. The core architecture leverages Rust's zero-cost abstractions and memory safety guarantees to achieve the ultra-low latency required for MEV competition.
 
-      What makes this project special is how it uses flashloans to execute trades without needing upfront capital. This lets the bot take advantage of arbitrage opportunities regardless of wallet size.
+      The system implements a modified Bellman-Ford algorithm optimized for detecting negative cycles in a weighted directed graph representing exchange rates. Each vertex represents a token and each edge represents an exchange rate between two tokens on a specific DEX. By finding negative cycles in this graph, we can identify arbitrage opportunities across multiple trading pairs and exchanges.
 
-      Some cool features I implemented:
-      - Live monitoring across multiple exchanges like Uniswap and Sushiswap
-      - Smart algorithms that quickly spot profitable trading opportunities
-      - Custom smart contracts that execute trades automatically
-      - Flashloan integration that removes the capital barrier to entry
-      - Gas optimization techniques to maximize profits on each trade
-      - MEV bundle submission to get transactions included efficiently
-      - Risk management systems to protect against unexpected market moves
+      Technical implementation details:
+      - Custom async runtime built on tokio in rust for concurrent monitoring of multiple DEX contracts
+      - Modified Bellman-Ford with parallel path exploration
+      - Smart contract interactions via alloy-rs
+
+      The architecture consists of several key components:
+      - Market data ingestion engine processing real-time events from DEX contracts
+      - Graph maintenance module updating exchange rate edges as prices change
+      - Arbitrage detection engine running modified Bellman-Ford analysis
+      - Smart contract interaction layer managing flashloans and trade execution
+      - Risk management system enforcing position limits and slippage thresholds
+
+      This design allows for microsecond-level response times while maintaining the reliability needed for automated trading.
     `,
     shortDescription: 'High-performance Web3 arbitrage bot written in Rust that capitalizes on price differences across decentralized exchanges.',
     imageUrl: 'https://images.unsplash.com/photo-1642104704074-907c0698cbd9',
@@ -209,8 +227,8 @@ export const projects: Project[] = [
   },
   {
     id: '3',
-    title: 'HyperSpartan',
-    slug: 'hyperspartan',
+    title: 'Telegram Trading Bot',
+    slug: 'telegram-trading-bot',
     category: 'web3',
     technologies: ['Telegram API', 'AI', 'Hyperliquid', 'Trading Bot', 'Crypto Trading', 'HyperEVM'],
     description: `
@@ -227,28 +245,36 @@ export const projects: Project[] = [
       - Adjust your risk level by changing leverage with simple commands
       - Get AI-powered insights about market conditions before you trade
       - Easily move funds between spot and perpetual markets
+
+      Technical Implementation:
+      - Built entirely in Rust for maximum performance and reliability
+      - Uses PostgreSQL for persistent storage of user data and trading history
+      - Implements Redis caching
+      - Handles high concurrent user load efficiently through Rust's async runtime
     `,
     shortDescription: 'AI-powered Telegram bot for Hyperliquid traders providing natural language trading, automated strategies, and real-time position management.',
-    imageUrl: 'https://images.unsplash.com/photo-1640340434855-6084b1f4901c',
+    imageUrl: '/images/projects/hyperspartan/telegram.jpg',
     liveUrl: 'https://www.hyperspartan.xyz/',
-    telegramUrl: 'https://t.me/HyperSpartanBot',
-    demoUrl: 'https://www.hyperspartan.xyz/demo',
+    telegramUrl: 'https://t.me/HyperSpartan_Bot',
     additionalLinks: [
-      { label: 'Documentation', url: 'https://docs.hyperspartan.xyz' },
-      { label: 'Buy $HYSP Token', url: 'https://www.hyperspartan.xyz/token' }
+      { label: 'Website', url: 'https://hyperspartan.xyz' },
+      { label: 'Whitepaper', url: 'https://hyperspartan.xyz/whitepaper' },
     ],
     screenshots: [
       { 
-        url: 'https://images.unsplash.com/photo-1605792657660-596af9009e82', 
-        caption: 'Trading interface showing real-time position management' 
+        url: '/images/projects/hyperspartan/telegram.jpg', 
+        caption: 'Telegram bot interface allowing natural language trading commands' 
       },
-      { 
-        url: 'https://images.unsplash.com/photo-1639322537504-6427a16b0a28', 
-        caption: 'Natural language order execution in Telegram' 
+     
+    ],
+    videos: [
+      {
+        url: '/images/projects/hyperspartan/ai-command.mp4',
+        caption: 'Natural language AI command processing in action'
       },
-      { 
-        url: 'https://images.unsplash.com/photo-1618044733300-9472054094ee', 
-        caption: 'Performance analytics dashboard with PnL tracking' 
+      {
+        url: '/images/projects/hyperspartan/liquidlaunch.mp4',
+        caption: 'Liquid Launch feature demonstration'
       }
     ],
     featured: false,
