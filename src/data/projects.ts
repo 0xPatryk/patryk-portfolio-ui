@@ -14,12 +14,63 @@ export interface Project {
   telegramUrl?: string;
   demoUrl?: string;
   additionalLinks?: { label: string; url: string }[];
-  screenshots?: { url: string; caption: string }[];
+  screenshots?: { url: string; caption: string; fit?: string }[];
   videos?: { url: string; caption: string }[];
 }
 
 export const projects: Project[] = [
- 
+  {
+    id: '7',
+    title: 'Event Mobile App',
+    slug: 'event-mobile-app',
+    category: 'performance',
+    technologies: ['Flutter', 'Node.js', 'Fastify', 'Ory', 'PostgreSQL', 'Gorse ML', 'Machine Learning'],
+    description: `
+      I'm developing a party event mobile app with a focus on simplicity and ease of use, targeting the German market initially with plans for international expansion. The app addresses a common frustration with existing event discovery platforms in Germany, which are often unnecessarily complex and always require registration.
+
+      Key Features:
+      - User-friendly interface for discovering and joining local party events
+      - No mandatory registration required to browse events
+      - Smart recommendation system powered by Gorse ML that learns user preferences
+      - Real-time event updates and notifications
+      - Location-based event discovery
+      - Integration with popular payment systems
+      - Multi-language support (starting with German, expandable to other languages)
+
+      Technical Architecture:
+      - Flutter for cross-platform mobile frontend development
+      - Node.js with Fastify framework for a high-performance backend
+      - Ory for secure and flexible authorization management
+      - Gorse Machine Learning recommendation system for personalized event suggestions
+      - PostgreSQL database ensuring scalability and efficient data management
+      - RESTful API design for seamless communication between components
+      - Containerized deployment setup for easy scaling and maintenance
+
+      The app fills a gap in the German event discovery market by providing a streamlined, intuitive experience that respects user privacy and doesn't force account creation for basic functionality. The recommendation engine becomes more powerful as it learns from user interactions, creating increasingly personalized event suggestions over time.
+    `,
+    shortDescription: 'A streamlined party event discovery app for the German market built with Flutter, Node.js, and ML-powered recommendations, designed to eliminate unnecessary complexity and registration barriers.',
+    imageUrl: '/images/projects/event-app/splash_logo.png',
+    featured: true,
+    date: '2024-03-15',
+    screenshots: [
+
+      { 
+        url: '/images/projects/event-app/main.png', 
+        caption: 'Login screen with simple authentication options',
+        fit: 'contain'
+      },
+      { 
+        url: '/images/projects/event-app/party_detail.png', 
+        caption: 'Detailed event view with information and join options',
+        fit: 'contain'
+      },
+      { 
+        url: '/images/projects/event-app/map.png', 
+        caption: 'Map view showing event locations',
+        fit: 'contain'
+      }
+    ],
+  },
   {
     id: '5',
     title: 'Maskify - Re-uploading viral videos across multiple side accounts',

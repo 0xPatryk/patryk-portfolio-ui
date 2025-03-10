@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { projects, type Project } from '@/data/projects';
 import { motion } from 'framer-motion';
+import ImageLightbox from '@/components/ImageLightbox';
 
 // Helper function to format text with markdown-like syntax
 const formatDescription = (text: string) => {
@@ -30,6 +31,8 @@ export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const [project, setProject] = useState<Project | undefined>(undefined);
   const [relatedProjects, setRelatedProjects] = useState<Project[]>([]);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   const navigate = useNavigate();
   
   useEffect(() => {
@@ -268,16 +271,20 @@ export default function ProjectDetail() {
                   {project.screenshots.map((screenshot, index) => (
                     <motion.div 
                       key={index} 
-                      className="rounded-xl overflow-hidden border border-border/40 shadow-lg"
+                      className="rounded-xl overflow-hidden border border-border/40 shadow-lg cursor-pointer"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
+                      onClick={() => {
+                        setLightboxIndex(index);
+                        setLightboxOpen(true);
+                      }}
                     >
-                      <div className="aspect-[16/9] overflow-hidden">
+                      <div className={`${screenshot.fit === 'contain' ? 'aspect-auto min-h-[300px]' : 'aspect-[16/9]'} overflow-hidden flex items-center justify-center bg-card/50`}>
                         <img 
                           src={screenshot.url} 
                           alt={screenshot.caption}
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                          className={`w-full h-full ${screenshot.fit || 'object-cover'} hover:scale-105 transition-transform duration-500`}
                         />
                       </div>
                       {screenshot.caption && (
@@ -289,6 +296,16 @@ export default function ProjectDetail() {
                   ))}
                 </div>
               </motion.div>
+            )}
+            
+            {/* Lightbox component */}
+            {project.screenshots && project.screenshots.length > 0 && (
+              <ImageLightbox 
+                images={project.screenshots}
+                initialIndex={lightboxIndex}
+                isOpen={lightboxOpen}
+                onClose={() => setLightboxOpen(false)}
+              />
             )}
             
             {relatedProjects.length > 0 && (
