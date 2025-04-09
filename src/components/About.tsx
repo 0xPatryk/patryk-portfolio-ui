@@ -8,7 +8,7 @@ import { skills } from '@/data/projects';
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
-  
+
   return (
     <section ref={containerRef} className="py-20 bg-secondary/50">
       <div className="container mx-auto px-4 md:px-6">
@@ -35,7 +35,7 @@ export default function About() {
                 My background spans from developing blockchain applications to creating scraping tools and optimizing system performance for enterprise clients. I'm passionate about clean code, performance engineering, and creating solutions that solve real business challenges.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export default function About() {
               ))}
             </motion.div>
           </div>
-          
+
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export default function About() {
               className="bg-background p-6 rounded-lg shadow-sm border border-border/50"
             >
               <h3 className="text-xl font-medium mb-4">Technical Skills</h3>
-              
+
               <div className="space-y-6">
                 {skills.map((category, index) => (
                   <div key={index}>

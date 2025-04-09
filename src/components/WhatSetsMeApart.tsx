@@ -30,15 +30,15 @@ export default function WhatSetsMeApart() {
             My approach to development is driven by these core principles that ensure your project succeeds
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {differentiators.map((item, i) => (
-            <InteractiveElement 
+            <InteractiveElement
               key={i}
               className="bg-card shadow-md hover:shadow-lg rounded-xl p-8 border border-border/40 flex flex-col items-center text-center transition-all duration-300 opacity-0 translate-y-8 animate-slide-up"
               style={{ animationDelay: `${0.3 + i * 0.1}s` }}
             >
-              <motion.div 
+              <motion.div
                 className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-5"
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}

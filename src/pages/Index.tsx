@@ -14,23 +14,23 @@ import WhatSetsMeApart from '@/components/WhatSetsMeApart';
 export default function Index() {
   // Only show featured projects on the homepage
   const featuredProjects = projects.filter(project => project.featured);
-  
+
   return (
     <PageTransition>
       <Helmet>
         <title>0xPatryk.dev | Software Developer & Problem Solver</title>
         <meta name="description" content="Personal portfolio of Patryk, a software developer who can build anything that makes business sense. Specializing in custom solutions for businesses and startups." />
       </Helmet>
-      
+
       <Navbar />
-      
+
       <main>
         <Hero />
-        
+
         <WhatSetsMeApart />
-        
+
         <About />
-        
+
         <section className="py-20">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col md:flex-row justify-between items-center mb-12">
@@ -40,8 +40,8 @@ export default function Index() {
                   See how I've transformed complex business challenges into effective software solutions
                 </p>
               </div>
-              
-              <Link 
+
+              <Link
                 to="/portfolio"
                 className="mt-4 md:mt-0 inline-flex items-center px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 text-sm font-medium transition-all"
               >
@@ -49,7 +49,7 @@ export default function Index() {
                 <ArrowRight size={16} className="ml-2" />
               </Link>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredProjects.map(project => (
                 <PortfolioItem key={project.id} project={project} />
@@ -57,9 +57,9 @@ export default function Index() {
             </div>
           </div>
         </section>
-        
+
         <Skills />
-        
+
         <section className="py-20 bg-secondary/50">
           <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Have a Business Challenge? Let Me Solve It</h2>
@@ -76,7 +76,7 @@ export default function Index() {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </PageTransition>
   );

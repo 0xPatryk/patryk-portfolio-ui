@@ -6,7 +6,7 @@ import InteractiveElement from './InteractiveElement';
 export default function Skills() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
-  
+
   const skills = [
     {
       icon: <Code size={24} className="text-brand-blue" />,
@@ -33,7 +33,7 @@ export default function Skills() {
       technologies: ["Solidity", "Ethers.js", "Web3.js", "IPFS"]
     }
   ];
-  
+
   return (
     <section ref={containerRef} className="py-20">
       <div className="container mx-auto px-4 md:px-6">
@@ -49,7 +49,7 @@ export default function Skills() {
             </p>
           </motion.div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {skills.map((skill, i) => (
             <motion.div

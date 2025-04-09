@@ -1,6 +1,6 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
+import React from 'react';
 
 interface AnimatedTextProps {
   text: string;
@@ -48,28 +48,30 @@ export default function AnimatedText({
   const separator = splitBy === 'word' ? ' ' : '';
 
   return (
-    <div 
-      ref={containerRef} 
-      className={cn("inline-block overflow-hidden", className)}
+    <div
+      ref={containerRef}
+      className={cn("inline-block", className)}
       aria-label={text}
     >
       {units.map((unit, index) => (
-        <span
-          key={index}
-          className="inline-block overflow-hidden"
-        >
+        <React.Fragment key={index}>
           <span
-            className={cn(
-              "inline-block translate-y-[100%] opacity-0 transition-transform duration-500 ease-out",
-              inView && "translate-y-0 opacity-100"
-            )}
-            style={{
-              transitionDelay: `${delay + index * staggerDelay}s`
-            }}
+            className="inline-block overflow-hidden"
           >
-            {unit}{index < units.length - 1 ? separator : ''}
+            <span
+              className={cn(
+                "inline-block translate-y-[100%] opacity-0 transition-transform duration-500 ease-out",
+                inView && "translate-y-0 opacity-100"
+              )}
+              style={{
+                transitionDelay: `${delay + index * staggerDelay}s`
+              }}
+            >
+              {unit}
+            </span>
           </span>
-        </span>
+          {index < units.length - 1 ? separator : ''}
+        </React.Fragment>
       ))}
     </div>
   );
