@@ -20,90 +20,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: '7',
-    title: 'Event Mobile App',
-    slug: 'event-mobile-app',
-    category: 'performance',
-    technologies: ['Flutter', 'Node.js', 'Fastify', 'Ory', 'PostgreSQL', 'Gorse ML', 'Machine Learning'],
-    description: `
-      I'm developing a party event mobile app with a focus on simplicity and ease of use, targeting the German market initially with plans for international expansion. The app addresses a common frustration with existing event discovery platforms in Germany, which are often unnecessarily complex and always require registration.
-
-      Key Features:
-      - User-friendly interface for discovering and joining local party events
-      - No mandatory registration required to browse events
-      - Smart recommendation system powered by Gorse ML that learns user preferences
-      - Real-time event updates and notifications
-      - Location-based event discovery
-      - Integration with popular payment systems
-      - Multi-language support (starting with German, expandable to other languages)
-
-      Technical Architecture:
-      - Flutter for cross-platform mobile frontend development
-      - Node.js with Fastify framework for a high-performance backend
-      - Ory for secure and flexible authorization management
-      - Gorse Machine Learning recommendation system for personalized event suggestions
-      - PostgreSQL database ensuring scalability and efficient data management
-      - RESTful API design for seamless communication between components
-      - Containerized deployment setup for easy scaling and maintenance
-
-      The app fills a gap in the German event discovery market by providing a streamlined, intuitive experience that respects user privacy and doesn't force account creation for basic functionality. The recommendation engine becomes more powerful as it learns from user interactions, creating increasingly personalized event suggestions over time.
-    `,
-    shortDescription: 'A streamlined party event discovery app for the German market built with Flutter, Node.js, and ML-powered recommendations, designed to eliminate unnecessary complexity and registration barriers.',
-    imageUrl: '/images/projects/event-app/splash_logo.png',
-    featured: true,
-    date: '2024-03-15',
-    screenshots: [
-
-      { 
-        url: '/images/projects/event-app/main.png', 
-        caption: 'Login screen with simple authentication options',
-        fit: 'contain'
-      },
-      { 
-        url: '/images/projects/event-app/party_detail.png', 
-        caption: 'Detailed event view with information and join options',
-        fit: 'contain'
-      },
-      { 
-        url: '/images/projects/event-app/map.png', 
-        caption: 'Map view showing event locations',
-        fit: 'contain'
-      }
-    ],
-  },
-  {
-    id: '5',
-    title: 'Maskify - Re-uploading viral videos across multiple side accounts',
-    slug: 'maskify',
+    id: '8',
+    title: 'AI Tools Finder',
+    slug: 'ai-tools-finder',
     category: 'automation',
-    technologies: ['Python', 'FFmpeg', 'React', 'Node.js', 'Video Processing', 'Social Media APIs', 'Audio Manipulation'],
+    technologies: [
+      'React','Stripe', "RAG", "Supabase", 'TypeScript', 'shadcn/ui', 'Tailwind CSS', 'Framer Motion', 
+       'PostgreSQL', 'Edge Functions', 'Deno',  'RAG', 'LLM', 'n8n'
+    ],
     description: `
-      I developed Maskify to solve a specific problem for a social media agency client. They were re-uploading viral videos across multiple side accounts but noticed limited reach due to Instagram's algorithm detecting duplicate content.
+      Discover the perfect AI tool for your needs with this full-stack application. Built with a modern stack (React, TypeScript, Supabase), it features a curated repository, an intelligent recommendation system (potentially using RAG for chat-based suggestions), and secure user authentication.
+      Key Components:
+      - **Frontend:** React (Vite), TypeScript, shadcn/ui, Tailwind, Framer Motion for a smooth, type-safe UI.
+      - **Backend:** Supabase platform handling PostgreSQL database, authentication, and serverless Edge Functions (TypeScript/Deno) for tasks like Stripe integration, external API calls, and RAG logic.
+      - **Payments:** Stripe integration for handling subscriptions, one-time payments, and checkout processes.
+      - **Automation:** n8n workflows streamline new tool ingestion by scraping data, using LLMs for descriptions/tags, and feeding it into Supabase.
+      - **Type Safety:** End-to-end type safety ensured by auto-generated types from the DB schema.
 
-      The challenge was to create a system that could take any social media video and transform it in a way that would make it appear unique to content detection algorithms while preserving the original appeal of the content.
-
-      What Maskify does:
-      - Accepts URLs from any major platform (Instagram, TikTok, YouTube, Facebook)
-      - Downloads the original video content securely
-      - Allows users to specify how many unique variations they need
-      - Applies sophisticated audio transformations (pitch shifting, tempo changes, frequency masking)
-      - Subtly alters video metadata and encoding parameters
-      - Makes micro-adjustments to visual elements that are imperceptible to humans but significant to algorithms
-      - Delivers ready-to-upload files that bypass duplicate content detection
-      - Provides a simple web interface for non-technical users
-
-      The system has been a game-changer for the agency, allowing them to maintain engagement across multiple accounts without triggering algorithm penalties. It's particularly effective for agencies managing multiple client accounts in the same niche where content themes often overlap.
+      This project showcases a clean architecture focused on user experience, leveraging Supabase for a robust backend and n8n for efficient automation, making AI tool discovery effortless.
     `,
-    shortDescription: 'Content transformation platform that helps social media agencies reuse viral videos across multiple accounts by altering audio and metadata to bypass algorithm detection.',
-    imageUrl: '/images/projects/maskify/ui.png',
+    shortDescription: 'A full-stack AI tool discovery platform using React, Supabase, Stripe, and n8n, featuring a curated list and smart recommendations.',
+    imageUrl: '/images/projects/ai-tools-finder/screenshot.png',
     featured: true,
-    date: '2024-01-20',
-    screenshots: [
-      { 
-        url: '/images/projects/maskify/ui.png', 
-        caption: 'Maskify web interface for video processing and transformation' 
-      }
-    ]
+    date: '2025-04-09',
   },
   {
     id: '4',
@@ -154,6 +93,7 @@ export const projects: Project[] = [
     featured: false,
     date: '2024-03-01'
   },
+
   {
     id: '6',
     title: 'Airtable Social Media Analyzer',
@@ -205,6 +145,94 @@ export const projects: Project[] = [
         caption: 'Content performance comparison' 
       },
     ]
+  },
+ 
+  
+  {
+    id: '5',
+    title: 'Maskify - Re-uploading viral videos across multiple side accounts',
+    slug: 'maskify',
+    category: 'automation',
+    technologies: ['Python', 'FFmpeg', 'React', 'Node.js', 'Video Processing', 'Social Media APIs', 'Audio Manipulation'],
+    description: `
+      I developed Maskify to solve a specific problem for a social media agency client. They were re-uploading viral videos across multiple side accounts but noticed limited reach due to Instagram's algorithm detecting duplicate content.
+
+      The challenge was to create a system that could take any social media video and transform it in a way that would make it appear unique to content detection algorithms while preserving the original appeal of the content.
+
+      What Maskify does:
+      - Accepts URLs from any major platform (Instagram, TikTok, YouTube, Facebook)
+      - Downloads the original video content securely
+      - Allows users to specify how many unique variations they need
+      - Applies sophisticated audio transformations (pitch shifting, tempo changes, frequency masking)
+      - Subtly alters video metadata and encoding parameters
+      - Makes micro-adjustments to visual elements that are imperceptible to humans but significant to algorithms
+      - Delivers ready-to-upload files that bypass duplicate content detection
+      - Provides a simple web interface for non-technical users
+
+      The system has been a game-changer for the agency, allowing them to maintain engagement across multiple accounts without triggering algorithm penalties. It's particularly effective for agencies managing multiple client accounts in the same niche where content themes often overlap.
+    `,
+    shortDescription: 'Content transformation platform that helps social media agencies reuse viral videos across multiple accounts by altering audio and metadata to bypass algorithm detection.',
+    imageUrl: '/images/projects/maskify/ui.png',
+    featured: true,
+    date: '2024-01-20',
+    screenshots: [
+      { 
+        url: '/images/projects/maskify/ui.png', 
+        caption: 'Maskify web interface for video processing and transformation' 
+      }
+    ]
+  },
+  {
+    id: '7',
+    title: 'Event Mobile App',
+    slug: 'event-mobile-app',
+    category: 'performance',
+    technologies: ['Flutter', 'Node.js', 'Fastify', 'Ory', 'PostgreSQL', 'Gorse ML', 'Machine Learning'],
+    description: `
+      I'm developing a party event mobile app with a focus on simplicity and ease of use, targeting the German market initially with plans for international expansion. The app addresses a common frustration with existing event discovery platforms in Germany, which are often unnecessarily complex and always require registration.
+
+      Key Features:
+      - User-friendly interface for discovering and joining local party events
+      - No mandatory registration required to browse events
+      - Smart recommendation system powered by Gorse ML that learns user preferences
+      - Real-time event updates and notifications
+      - Location-based event discovery
+      - Integration with popular payment systems
+      - Multi-language support (starting with German, expandable to other languages)
+
+      Technical Architecture:
+      - Flutter for cross-platform mobile frontend development
+      - Node.js with Fastify framework for a high-performance backend
+      - Ory for secure and flexible authorization management
+      - Gorse Machine Learning recommendation system for personalized event suggestions
+      - PostgreSQL database ensuring scalability and efficient data management
+      - RESTful API design for seamless communication between components
+      - Containerized deployment setup for easy scaling and maintenance
+
+      The app fills a gap in the German event discovery market by providing a streamlined, intuitive experience that respects user privacy and doesn't force account creation for basic functionality. The recommendation engine becomes more powerful as it learns from user interactions, creating increasingly personalized event suggestions over time.
+    `,
+    shortDescription: 'A streamlined party event discovery app for the German market built with Flutter, Node.js, and ML-powered recommendations, designed to eliminate unnecessary complexity and registration barriers.',
+    imageUrl: '/images/projects/event-app/splash_logo.png',
+    featured: true,
+    date: '2024-03-15',
+    screenshots: [
+
+      { 
+        url: '/images/projects/event-app/main.png', 
+        caption: 'Login screen with simple authentication options',
+        fit: 'contain'
+      },
+      { 
+        url: '/images/projects/event-app/party_detail.png', 
+        caption: 'Detailed event view with information and join options',
+        fit: 'contain'
+      },
+      { 
+        url: '/images/projects/event-app/map.png', 
+        caption: 'Map view showing event locations',
+        fit: 'contain'
+      }
+    ],
   },
   {
     id: '1',
