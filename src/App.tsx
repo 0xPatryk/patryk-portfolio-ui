@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,6 +11,8 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import AboutPage from "./pages/AboutPage";
+import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +29,8 @@ const App = () => (
             <Route path="/project/:slug" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

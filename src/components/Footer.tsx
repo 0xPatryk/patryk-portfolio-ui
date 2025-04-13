@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { Mail, ArrowUp } from 'lucide-react';
 
@@ -62,7 +63,11 @@ export default function Footer() {
         </div>
         
         <div className="mt-12 pt-6 border-t border-border/20 text-sm text-muted-foreground flex flex-wrap justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} 0xPatryk.dev. All rights reserved.</p>
+          <div className="flex space-x-4">
+            <p>© {new Date().getFullYear()} 0xPatryk.dev. All rights reserved.</p>
+            <Link to="/impressum" className="hover:text-foreground transition-colors">Impressum</Link>
+            <Link to="/datenschutz" className="hover:text-foreground transition-colors">Datenschutz</Link>
+          </div>
           
           <button
             onClick={scrollToTop}
