@@ -31,23 +31,23 @@ export const projects: Project[] = [
     description: `
       toolfi.ai revolutionizes AI tool discovery with an intelligent platform that connects businesses and developers with the perfect AI solutions for their specific needs. Built with cutting-edge technology, it combines curated content with smart recommendations to eliminate hours of research and trial-and-error.
 
-      **Core Innovation:**
+      Core Innovation:
       The platform leverages advanced RAG (Retrieval Augmented Generation) technology to understand user queries in natural language and provide personalized tool recommendations. Instead of browsing endless directories, users simply describe what they want to accomplish, and the AI suggests the most suitable tools.
 
-      **Key Features:**
-      - **Intelligent Discovery:** RAG-powered chat interface for conversational tool finding
-      - **Curated Database:** Hand-picked collection of 500+ verified AI tools across all categories
-      - **Smart Filtering:** Advanced search with filters for pricing, use case, industry, and technical requirements
-      - **User Profiles:** Personalized recommendations based on previous searches and preferences
-      - **Comparison Engine:** Side-by-side tool comparisons with pros, cons, and pricing analysis
-      - **Integration Guides:** Step-by-step setup tutorials and API documentation for each tool
+      Key Features:
+      - Intelligent Discovery: RAG-powered chat interface for conversational tool finding
+      - Curated Database: Hand-picked collection of 500+ verified AI tools across all categories
+      - Smart Filtering: Advanced search with filters for pricing, use case, industry, and technical requirements
+      - User Profiles: Personalized recommendations based on previous searches and preferences
+      - Comparison Engine: Side-by-side tool comparisons with pros, cons, and pricing analysis
+      - Integration Guides: Step-by-step setup tutorials and API documentation for each tool
 
-      **Technical Excellence:**
-      - **Frontend:** React with TypeScript, shadcn/ui components, and smooth Framer Motion animations
-      - **Backend:** Supabase handling PostgreSQL database, authentication, and serverless Edge Functions
-      - **AI Integration:** Custom RAG implementation using vector embeddings and LLM processing
-      - **Automation:** n8n workflows automatically discover, analyze, and catalog new AI tools
-      - **Payments:** Stripe integration for premium features and affiliate partnerships
+      Technical Excellence:
+      - Frontend: React with TypeScript, shadcn/ui components, and smooth Framer Motion animations
+      - Backend: Supabase handling PostgreSQL database, authentication, and serverless Edge Functions
+      - AI Integration: Custom RAG implementation using vector embeddings and LLM processing
+      - Automation: n8n workflows automatically discover, analyze, and catalog new AI tools
+      - Payments: Stripe integration for premium features and affiliate partnerships
 
       This platform showcases modern full-stack development combined with AI innovation, helping users navigate the rapidly evolving AI landscape with confidence and efficiency.
     `,
@@ -69,27 +69,27 @@ export const projects: Project[] = [
     description: `
       Apoloq transforms pharmaceutical training in Germany through groundbreaking conversational AI that simulates realistic customer consultations. This innovative platform addresses the critical need for scalable, consistent training in pharmacy customer service by providing immersive, voice-based scenarios with AI-generated customers.
 
-      **The Challenge Solved:**
+      The Challenge Solved:
       German pharmacies struggle with training staff for complex customer consultations due to time constraints, costs, and lack of consistency. Traditional methods can't provide the diverse, realistic practice scenarios needed for quality pharmaceutical customer service.
 
-      **Revolutionary Solution:**
+      Revolutionary Solution:
       Apoloq creates dynamic training experiences where pharmacy staff practice consultations with AI customers that exhibit authentic behavior patterns, emotional responses, and varying pharmaceutical knowledge levels. Each session provides unique challenges that mirror real-world pharmacy interactions.
 
-      **Core Capabilities:**
-      - **Realistic Voice Interactions:** Natural conversations with AI customers using advanced speech recognition and synthesis
-      - **Dynamic Scenario Generation:** Infinite variety of consultation scenarios from simple requests to complex prescription discussions
-      - **Intelligent Performance Analysis:** Feedback on communication effectiveness, pharmaceutical accuracy, and empathy demonstration
-      - **Scalable Training Management:** Deploy consistent training across pharmacy chains with centralized progress tracking
-      - **Adaptive Learning:** AI customers adjust difficulty and complexity based on trainee performance
+      Core Capabilities:
+      - Realistic Voice Interactions: Natural conversations with AI customers using advanced speech recognition and synthesis
+      - Dynamic Scenario Generation: Infinite variety of consultation scenarios from simple requests to complex prescription discussions
+      - Intelligent Performance Analysis: Feedback on communication effectiveness, pharmaceutical accuracy, and empathy demonstration
+      - Scalable Training Management: Deploy consistent training across pharmacy chains with centralized progress tracking
+      - Adaptive Learning: AI customers adjust difficulty and complexity based on trainee performance
 
-      **Technical Innovation:**
-      - **Frontend Excellence:** Next.js 15 and React 19 deliver seamless, responsive German/English interfaces
-      - **Real-time Audio:** WebRTC integration provides crystal-clear voice communication without additional software
-      - **AI Orchestration:** FastAPI backend with Pipecat-AI framework manages sophisticated conversation flows
-      - **Multi-modal AI:** Integration of OpenAI GPT for natural language, ElevenLabs for German TTS, and Deepgram for pharmaceutical speech recognition
-      - **Specialized Processing:** Custom algorithms handle German pharmaceutical terminology and medical term correction
+      Technical Innovation:
+      - Frontend Excellence: Next.js 15 and React 19 deliver seamless, responsive German/English interfaces
+      - Real-time Audio: WebRTC integration provides crystal-clear voice communication without additional software
+      - AI Orchestration: FastAPI backend with Pipecat-AI framework manages sophisticated conversation flows
+      - Multi-modal AI: Integration of OpenAI GPT for natural language, ElevenLabs for German TTS, and Deepgram for pharmaceutical speech recognition
+      - Specialized Processing: Custom algorithms handle German pharmaceutical terminology and medical term correction
 
-      **Business Impact:**
+      Business Impact:
       Apoloq eliminates geographical training barriers, reduces costs by 70%, and ensures 24/7 availability of high-quality consultation practice. Pharmacy chains report 40% improvement in staff confidence and customer satisfaction scores.
 
       This project demonstrates expertise in conversational AI, real-time audio processing, healthcare technology, and scalable SaaS architecture, showcasing AI's potential to revolutionize professional training.
@@ -130,28 +130,28 @@ export const projects: Project[] = [
     description: `
       I developed a comprehensive AI Chatbot Builder that democratizes intelligent customer support by enabling businesses to create sophisticated, knowledge-based chatbots without any technical expertise. This platform transforms how companies handle customer inquiries while maintaining accuracy and brand consistency.
 
-      **The Business Problem:**
+      The Business Problem:
       Companies struggle to provide 24/7 customer support while ensuring responses are accurate and relevant to their specific products or services. Traditional chatbots give generic answers, while human support is expensive and doesn't scale effectively during peak times.
 
-      **Intelligent Solution:**
+      Intelligent Solution:
       The platform creates AI chatbots that learn from business documents and provide contextually accurate answers based on company-specific content. Using advanced RAG technology, these chatbots understand context and deliver personalized responses that feel human-like.
 
-      **Powerful Features:**
-      - **Smart Knowledge Processing:** Automatic document analysis that extracts and organizes information into searchable knowledge bases
-      - **Complete Brand Customization:** Full control over chatbot appearance, colors, fonts, messaging, and styling to match website perfectly
-      - **Seamless Website Integration:** One-click embed system that works across any platform with simple JavaScript snippet
-      - **Intelligent Lead Capture:** Built-in forms and Calendly integration convert conversations into qualified business opportunities
-      - **Multi-Platform Deployment:** Comprehensive WordPress integration plus documentation for other CMS platforms
-      - **Real-time Analytics:** Track conversations, identify knowledge gaps, and optimize chatbot performance
+      Powerful Features:
+      - Smart Knowledge Processing: Automatic document analysis that extracts and organizes information into searchable knowledge bases
+      - Complete Brand Customization: Full control over chatbot appearance, colors, fonts, messaging, and styling to match website perfectly
+      - Seamless Website Integration: One-click embed system that works across any platform with simple JavaScript snippet
+      - Intelligent Lead Capture: Built-in forms and Calendly integration convert conversations into qualified business opportunities
+      - Multi-Platform Deployment: Comprehensive WordPress integration plus documentation for other CMS platforms
+      - Real-time Analytics: Track conversations, identify knowledge gaps, and optimize chatbot performance
 
-      **Technical Architecture:**
-      - **Frontend Excellence:** React with TypeScript for type safety, shadcn/ui for consistent design, and Framer Motion for smooth user experience
-      - **Backend Power:** Supabase providing PostgreSQL database, authentication, and serverless Edge Functions for scalable processing
-      - **AI Integration:** Advanced RAG implementation combining document embeddings with large language models for accurate, context-aware responses
-      - **Document Pipeline:** Automated processing that extracts text from PDFs, chunks content optimally, generates embeddings, and stores in vector database
-      - **Real-time Communication:** WebSocket integration for instant message delivery and typing indicators
+      Technical Architecture:
+      - Frontend Excellence: React with TypeScript for type safety, shadcn/ui for consistent design, and Framer Motion for smooth user experience
+      - Backend Power: Supabase providing PostgreSQL database, authentication, and serverless Edge Functions for scalable processing
+      - AI Integration: Advanced RAG implementation combining document embeddings with large language models for accurate, context-aware responses
+      - Document Pipeline: Automated processing that extracts text from PDFs, chunks content optimally, generates embeddings, and stores in vector database
+      - Real-time Communication: WebSocket integration for instant message delivery and typing indicators
 
-      **Business Impact:**
+      Business Impact:
       Companies using this platform see 60% reduction in support costs, 90% faster response times, and 35% increase in lead conversion rates. The system handles complex queries accurately while maintaining brand voice and converting visitors into customers.
 
       This project showcases full-stack development expertise, AI integration mastery, and deep understanding of business automation needs for modern customer engagement.

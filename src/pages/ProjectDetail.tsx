@@ -12,7 +12,7 @@ import ImageLightbox from '@/components/ImageLightbox';
 // Helper function to format text with markdown-like syntax
 const formatDescription = (text: string) => {
   if (!text) return [];
-  
+
   // Split into paragraphs (double newlines)
   return text.split('\n\n').map(paragraph => {
     // Check if paragraph is a list
@@ -21,7 +21,7 @@ const formatDescription = (text: string) => {
       const listItems = paragraph.trim().split('\n').map(item => item.trim().substring(2));
       return { type: 'list', content: listItems };
     }
-    
+
     // Regular paragraph
     return { type: 'paragraph', content: paragraph.trim() };
   });
@@ -34,41 +34,41 @@ export default function ProjectDetail() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     const foundProject = projects.find(p => p.slug === slug);
-    
+
     if (foundProject) {
       setProject(foundProject);
-      
+
       // Find related projects in the same category
       const related = projects
         .filter(p => p.category === foundProject.category && p.id !== foundProject.id)
         .slice(0, 3);
-      
+
       setRelatedProjects(related);
     } else {
       // Redirect to portfolio if project not found
       navigate('/portfolio', { replace: true });
     }
   }, [slug, navigate]);
-  
+
   if (!project) {
     return null; // Will redirect via useEffect
   }
-  
+
   // Format the description
   const formattedDescription = formatDescription(project.description);
-  
+
   return (
     <PageTransition>
       <Helmet>
         <title>{project.title} | 0xPatryk.dev</title>
         <meta name="description" content={project.shortDescription} />
       </Helmet>
-      
+
       <Navbar />
-      
+
       <main className="pt-24 pb-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
@@ -79,7 +79,7 @@ export default function ProjectDetail() {
               <ArrowLeft size={16} className="mr-2" />
               Back to Portfolio
             </Link>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -87,17 +87,17 @@ export default function ProjectDetail() {
             >
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.technologies.map((tech, i) => (
-                  <span 
-                    key={i} 
+                  <span
+                    key={i}
                     className="px-2 py-0.5 text-xs rounded-full bg-secondary text-secondary-foreground"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              
+
               <h1 className="text-3xl md:text-4xl font-bold mb-4">{project.title}</h1>
-              
+
               <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-8">
                 <div className="flex items-center">
                   <Calendar size={16} className="mr-1" />
@@ -105,26 +105,26 @@ export default function ProjectDetail() {
                 </div>
                 <div className="flex items-center">
                   <Tag size={16} className="mr-1" />
-                  {project.category === 'web3' ? 'Web3 & Blockchain' : 
-                   project.category === 'automation' ? 'Automation & Scraping' : 
-                   'Performance Engineering'}
+                  {project.category === 'web3' ? 'Web3 & Blockchain' :
+                    project.category === 'automation' ? 'Automation & Scraping' :
+                      'Performance Engineering'}
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mb-8 rounded-xl overflow-hidden border border-border/40 shadow-sm"
             >
-              <img 
-                src={project.imageUrl} 
+              <img
+                src={project.imageUrl}
                 alt={project.title}
                 className="w-full aspect-video object-cover"
               />
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ export default function ProjectDetail() {
               className="flex flex-wrap gap-4 mb-8"
             >
               {project.githubUrl && (
-                <a 
+                <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -142,9 +142,9 @@ export default function ProjectDetail() {
                   View Code
                 </a>
               )}
-              
+
               {project.liveUrl && (
-                <a 
+                <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -156,7 +156,7 @@ export default function ProjectDetail() {
               )}
 
               {project.telegramUrl && (
-                <a 
+                <a
                   href={project.telegramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -170,7 +170,7 @@ export default function ProjectDetail() {
               )}
 
               {project.demoUrl && (
-                <a 
+                <a
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -182,7 +182,7 @@ export default function ProjectDetail() {
               )}
 
               {project.additionalLinks && project.additionalLinks.map((link, index) => (
-                <a 
+                <a
                   key={index}
                   href={link.url}
                   target="_blank"
@@ -194,7 +194,7 @@ export default function ProjectDetail() {
                 </a>
               ))}
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -221,7 +221,7 @@ export default function ProjectDetail() {
                 })}
               </div>
             </motion.div>
-            
+
             {project.videos && project.videos.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -232,16 +232,16 @@ export default function ProjectDetail() {
                 <h2 className="text-2xl font-bold mb-8">Project Demos</h2>
                 <div className="space-y-12">
                   {project.videos.map((video, index) => (
-                    <motion.div 
-                      key={index} 
+                    <motion.div
+                      key={index}
                       className="rounded-xl overflow-hidden border border-border/40 shadow-lg"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
                     >
                       <div className="aspect-[16/9] overflow-hidden">
-                        <video 
-                          src={video.url} 
+                        <video
+                          src={video.url}
                           controls
                           className="w-full h-full object-cover"
                         >
@@ -258,7 +258,7 @@ export default function ProjectDetail() {
                 </div>
               </motion.div>
             )}
-            
+
             {project.screenshots && project.screenshots.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -269,8 +269,8 @@ export default function ProjectDetail() {
                 <h2 className="text-2xl font-bold mb-8">Project Screenshots</h2>
                 <div className="space-y-12">
                   {project.screenshots.map((screenshot, index) => (
-                    <motion.div 
-                      key={index} 
+                    <motion.div
+                      key={index}
                       className="rounded-xl overflow-hidden border border-border/40 shadow-lg cursor-pointer"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -281,8 +281,8 @@ export default function ProjectDetail() {
                       }}
                     >
                       <div className={`${screenshot.fit === 'contain' ? 'aspect-auto min-h-[300px]' : 'aspect-[16/9]'} overflow-hidden flex items-center justify-center bg-card/50`}>
-                        <img 
-                          src={screenshot.url} 
+                        <img
+                          src={screenshot.url}
                           alt={screenshot.caption}
                           className={`w-full h-full ${screenshot.fit || 'object-cover'} hover:scale-105 transition-transform duration-500`}
                         />
@@ -297,17 +297,17 @@ export default function ProjectDetail() {
                 </div>
               </motion.div>
             )}
-            
+
             {/* Lightbox component */}
             {project.screenshots && project.screenshots.length > 0 && (
-              <ImageLightbox 
+              <ImageLightbox
                 images={project.screenshots}
                 initialIndex={lightboxIndex}
                 isOpen={lightboxOpen}
                 onClose={() => setLightboxOpen(false)}
               />
             )}
-            
+
             {relatedProjects.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -324,8 +324,8 @@ export default function ProjectDetail() {
                       className="bg-card rounded-lg overflow-hidden border border-border/40 shadow-sm hover:shadow transition-shadow group"
                     >
                       <div className="aspect-video overflow-hidden">
-                        <img 
-                          src={relatedProject.imageUrl} 
+                        <img
+                          src={relatedProject.imageUrl}
                           alt={relatedProject.title}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
@@ -342,7 +342,7 @@ export default function ProjectDetail() {
           </div>
         </div>
       </main>
-      
+
       <Footer />
     </PageTransition>
   );
